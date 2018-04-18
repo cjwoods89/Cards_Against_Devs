@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">User Information</div>
+            <ul class="list-group" *ngIf="currentUser() | async as user">
+                <li class="list-group-item">Email: {{user.email}}</li>
+                <li class="list-group-item">Display Name: {{user.displayName}}</li>
+                <li class="list-group-item">Uid: {{user.uid}}</li>
+                <li class="list-group-item">Provider Id: {{user.providerId}}</li>
+                <li class="list-group-item" *ngIf="user.photoURL"><img
+                        [src]="user.photoURL"/></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 col-md-offset-5">
+        <a href="#" class="btn btn-lg btn-primary btn-block" (click)="logout()">Log out</a>
+    </div>
+</div>
