@@ -1,9 +1,11 @@
 import {Component} from "@angular/core";
 import {AuthService} from "app/shared/auth.service";
+import {CardService} from "app/shared/card-info.service";
 import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import {Router} from "@angular/router";
 import {UserInfo} from "app/shared/user-info";
+import {CardInfo} from "app/shared/card-info";
 
 @Component({
     selector: 'app-root',
@@ -58,4 +60,10 @@ export class AppComponent {
         this.alertType = null;
         this.alertMessage = "";
     }
+
+    getCards() {
+        this.CardService.getCards();
+        this.router.navigate(['/cards']);
+    }
+
 }

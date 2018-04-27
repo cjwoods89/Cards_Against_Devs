@@ -1,0 +1,41 @@
+<div *ngFor="let cards of cards">
+
+    <div *ngIf="cards.cardType == 'A'">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{cards.expansion}}</h5>
+                <p class="card-text">{{cards.text}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="cards.cardType == 'Q'">
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{cards.expansion}}</h5>
+                <p class="card-text">{{cards.text}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+    <th>cardType</th>
+    <th>expansion</th>
+    <th>id</th>
+    <th>numAnswers</th>
+    <th>text</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cards of cards">
+        <td>{{cards.id}}</td>
+        <td>{{cards.cardType}}</td>
+        <td>{{cards.expansion}}</td>
+        <td>{{cards.numAnswers}}</td>
+        <td>{{cards.text}}</td>
+    </tr>
+    </tbody>
+</table>

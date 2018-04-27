@@ -3,6 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {TestBed, async} from "@angular/core/testing";
 import {AppComponent} from "./app.component";
 import {AuthService} from "app/shared/auth.service";
+import {CardService} from "app/shared/card-info.service";
 import {AuthServiceStub} from "app/shared/auth.service.stub";
 import {AlertModule} from "ngx-bootstrap";
 
@@ -19,7 +20,7 @@ describe('AppComponent', () => {
                 AlertModule.forRoot()
             ],
             providers: [
-                {provide: AuthService, useValue: authServiceStub}
+                {provide: AuthService, useValue: authServiceStub, provider: CardService}
             ]
         });;
     });
